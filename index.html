@@ -1,294 +1,99 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0LDYVRYWX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C0LDYVRYWX');
-</script>
-
-	<script>
-var _hmt<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?164918d5b2a61e6ee43c4c13f112c685";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-	</script>
-
-	
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-    <meta content="webkit" name="renderer"/>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
-    <link href="favicon.ico" rel="shortcut icon"/>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    <!--默认使用本地资源，如果想使用CDN资源，请自行把下面的“js/jquery.min.js”替换为CDN地址即可-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/qieh.js"></script>
-    <!--默认使用本地资源，如果想使用CDN资源，请自行把下面的“js/particles.min.js”替换为CDN地址即可-->
-    <script src="js/particles.min.js"></script>
-    <script src="js/font.js"></script>
-    <title>颂伊</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      body {
-        /*打开下面注释，页面支持滚顶条，适用于图标超多的情况*/
-        overflow-y: auto;
-        /*背景图设置，设置路径在"css/style.css"下的3310行开始，默认关闭，开头为“body {”*/
-        /*也可以直接打开下面注释直接覆盖原生的渐变色背景，建议打开背景图之后注释渐变色背景样式“background: linear-gradient(135deg, #00C4FF, #9D1BB2) no-repeat fixed;”和“font-family: 'Helvetica Neue', 'Microsoft Yahei', SimHei, sans-serif;”*/
-        /*background-size: cover;*/
-        /*background: url(img/background.jpg) no-repeat fixed center top;*/
-      }
-		
-		
-
-
-      .shake {
-        /*打开下面注释，可调整图标大小，可能会导致特定分辨率下的UI错乱*/
-        width: 90px;
-        height: 90px;
-        /*打开下面注释可以给图标套上一个透明底层框*/
-        border-radius: 20%;
-      	border-width: 0;
-        box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-      }
-
-      .disabled-link {
-        pointer-events: none; /* 阻止鼠标事件 */
-        opacity: 0.3; /* 降低透明度以表示禁用状态 */
-        text-decoration: none; /* 去除下划线效果 */
-        cursor: default; /* 更改鼠标光标 */
-      }
-
-      #wrap::-webkit-scrollbar {
-        /*打开下面注释，可以往下滑动，适用于超多链接(图标)场景*/
-        /*width: 0;*/
-      }
-      #wrap {
-        /*打开下面注释，可以往下滑动，适用于超多链接(图标)场景*/
-        /*overflow-y: auto;*/
-      }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: url('https://tu.121318.xyz/zong/background/background_pic_121318.xyz.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+        .content-container {
+            background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 90%; /* 宽度调整 */
+            max-width: 800px; /* 最大宽度调整 */
+            text-align: center;
+        }
+        .footer-container {
+            background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px auto;
+            width: 90%; /* 宽度调整 */
+            max-width: 400px; /* 最大宽度调整 */
+            text-align: center;
+        }
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s ease;
+        }
+        #page1 {
+            transform: translateY(0);
+        }
+        #page2 {
+            transform: translateY(100%);
+        }
     </style>
 </head>
-<body>
-<div id="particles-js" style="position:absolute; top: 0; z-index: -1; width: 100%;height: 100%;">
-    <canvas class="particles-js-canvas-el" height="960" style="width: 100%; height: 100%;" width="1303"></canvas>
-</div>
-<script>particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 20,
-      density: {
-        enable: !0,
-        value_area: 1000
-      }
-    },
-    color: {
-      value: "#e1e1e1"
-    },
-    shape: {
-      type: "circle",
-      stroke: {
-        width: 0,
-        color: "#000000"
-      },
-      polygon: {
-        nb_sides: 5
-      },
-      image: {
-        src: "img/github.svg",
-        width: 100,
-        height: 100
-      }
-    },
-    opacity: {
-      value: 0.5,
-      random: !1,
-      anim: {
-        enable: !1,
-        speed: 1,
-        opacity_min: 0.1,
-        sync: !1
-      }
-    },
-    size: {
-      value: 15,
-      random: !0,
-      anim: {
-        enable: !1,
-        speed: 180,
-        size_min: 0.1,
-        sync: !1
-      }
-    },
-    line_linked: {
-      enable: !0,
-      distance: 650,
-      color: "#cfcfcf",
-      opacity: 0.26,
-      width: 1
-    },
-    move: {
-      enable: !0,
-      speed: 2,
-      direction: "none",
-      random: !0,
-      straight: !1,
-      out_mode: "out",
-      bounce: !1,
-      attract: {
-        enable: !1,
-        rotateX: 600,
-        rotateY: 1200
-      }
-    }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: !1,
-        mode: "repulse"
-      },
-      onclick: {
-        enable: !1,
-        mode: "push"
-      },
-      resize: !0
-    },
-    modes: {
-      grab: {
-        distance: 400,
-        line_linked: {
-          opacity: 1
+<body class="flex flex-col min-h-screen">
+    <div id="page1" class="page">
+        <div class="container mx-auto p-4 flex-grow">
+            <div class="content-container">
+                <img class="rounded-full h-24 w-24 mx-auto mb-4 transition-transform transform hover:scale-110" src="https://tu.121318.xyz/zong/logo/121318-ico.png" alt="profile picture">
+                <h1 class="text-3xl font-bold mb-4">Hi, I'm fongsera</h1>
+                <p class="text-lg text-zinc-600 mb-4">Passionate web developer with a love for frontend technologies.</p>
+                <p class="text-lg text-zinc-600 mb-4">一个苦哈哈的学生党</p>
+                <p class="text-lg text-zinc-600 mb-4">会一些编程和网络以及电路知识---（但不多）</p>
+                <p class="text-lg text-zinc-600 mb-4">Reach me at: example@email.com</p>
+            </div>
+        </div>
+        <footer class="footer-container">
+            <div class="container mx-auto flex flex-col items-center">
+                <div class="flex items-center mb-2">
+                    <span class="mr-2">本网站由</span>
+                    <a class="footer-support-logo mx-1" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" title="又拍云">
+                        <img src="https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/logo/upyun-logo.png" alt="又拍云" width="60" height="31">
+                    </a>
+                    <span>提供CDN加速</span>
+                </div>
+                <div class="flex">
+                    <p class="text-sm text-zinc-600 dark:text-zinc-300 mr-4">备案号: 123456789</p>
+                    <p class="text-sm text-zinc-600 dark:text-zinc-300">公网安备: 987654321</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="page2" class="page">
+        <iframe src="second_page.html" style="border:none;width:100%;height:100%;"></iframe>
+    </div>
+
+    <script>
+        let currentPage = 1;
+
+        function scrollHandler(event) {
+            if (event.deltaY > 0 && currentPage === 1) {
+                document.getElementById('page1').style.transform = 'translateY(-100%)';
+                document.getElementById('page2').style.transform = 'translateY(0)';
+                currentPage = 2;
+            } else if (event.deltaY < 0 && currentPage === 2) {
+                document.getElementById('page1').style.transform = 'translateY(0)';
+                document.getElementById('page2').style.transform = 'translateY(100%)';
+                currentPage = 1;
+            }
         }
-      },
-      bubble: {
-        distance: 400,
-        size: 40,
-        duration: 2,
-        opacity: 8,
-        speed: 3
-      },
-      repulse: {
-        distance: 200,
-        duration: 0.4
-      },
-      push: {
-        particles_nb: 4
-      },
-      remove: {
-        particles_nb: 2
-      }
-    }
-  },
-  retina_detect: !0
-});</script>
-<div id="wrap">
-    <div id="top">
-        <div id="logo">
-            <img class="logo"
-                 src="img/png/logo.svg"
-            />
-            <!--如果需要自定义logo图片,使用下面这段代码,并删除上面这段代码,图片位置应放在img下的logo.png-->
-            <!--<img class="logo" src="img/logo.png"/>-->
-            <p></p>
-            <div class="type-js headline">
-                <h1 class="text-js">你好呀！</h1>
 
-            </div>
-            <div class="" id="kg-btn">
-                <input class='tgl tgl-flip' id='qieh' type='checkbox'/>
-            </div>
-        </div>
-    </div>
-    <div id="main">
-        <!-- 外网访问地址 -->
-        <div class="app animated fadeInLeft" id="app">
-            <ul>
-				<li>
-                    <a href="https://download.cton.top/" target="_blank">
-                        <img class="shake" src="img/png/downloads.png"/>
-                        <strong>颂伊下载站</strong></a>
-                </li>
-				
-                <li>
-                    <!--添加“class="disabled-link"”属性可以禁用该图标-->
-                    <a href="https://eqing.cton.top/" target="_blank" >
-                        <img class="shake" src="img/png/blog.png"/>
-                        <strong>我的博客</strong></a>
-                </li>
-				
-
-				
-                <li>
-                    <a href="https://guide.cton.top/" target="_blank">
-                        <img class="shake" src="img/png/guide.png"/>
-                        <strong>我的导航</strong></a>
-                </li>
-                <li>
-                    <a href="https://ops.121318.xyz" target="_blank">
-                        <img class="shake" src="img/png/server.png"/>
-                        <strong>服务器</strong></a>
-                </li>
-                
-               
-
-                <li>
-                    <a href="https://status.cton.top" target="_blank">
-                        <img class="shake" src="img/png/status.png"/>
-                        <strong>服务状态</strong></a>
-                </li>
-
-               <li>
-                    <a href="https://chat.cton.top/" target="_blank">
-                        <img class="shake" src="img/png/chat.png"/>
-                        <strong>Chat</strong></a>
-	       </li>
-		    
-		    
-		    <li>
-                    <a href="https://linux.cton.top" target="_blank">
-                        <img class="shake" src="img/png/linux.png"/>
-                        <strong>linux命令</strong></a>
-                </li>
-		    
-		    
-		    
-		    <li>
-                    <a href="#" target="_blank" class="disabled-link">
-                        <img class="shake" src="img/png/script.png"/>
-                        <strong>快捷脚本</strong></a>
-                </li>
-
-                <li>
-                    <a href="#" target="_blank" class="disabled-link">
-                        <img class="shake" src="img/png/FaceTime.png"/>
-                        <strong>xxxxxx</strong></a>
-                </li>
-            </ul>
-        </div>
-
-        </div>
-        <div style="clear: both;"></div>
-    </div>
-<div id="footer">
-    <div class="footer-contents">
-        <div class="links">
-		<span>本网站由</span><a class="footer-support-logo" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="blank" title="又拍云"><img height="30" src="https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/logo/upyun-logo.png" alt="又拍云"></a><span>提供 CDN 加速</span>
-            <div class="line">
-                <a href="https://github.com/asundust/NAS-Nav-iCloud">NasHomeCloud</a>&nbsp;&nbsp;&nbsp;
-                <span class="footer-link-separator"></span>&nbsp;&nbsp;&nbsp;
-                <span class="copyright">╰(*°▽°*)╯</span>
-            </div>
-        </div>
-    </div>
-</div>
+        window.addEventListener('wheel', scrollHandler);
+    </script>
 </body>
 </html>
