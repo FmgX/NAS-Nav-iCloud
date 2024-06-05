@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>颂伊</title>
+    <title>Your Name's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body, html {
@@ -41,21 +41,7 @@
         #page1 {
             transform: translateY(0);
         }
-        #page2 {
-            transform: translateY(100%);
-        }
-    </style>
-</head>
-<body class="flex flex-col min-h-screen">
-    <div id="page1" class="page">
-        <div class="container mx-auto p-4 flex-grow">
-            <div class="content-container">
-                <img class="rounded-full h-24 w-24 mx-auto mb-4 transition-transform transform hover:scale-110" src="https://tu.121318.xyz/zong/logo/121318-ico.png" alt="profile picture">
-                <h1 class="text-3xl font-bold mb-4">Hi, I'm fongsera</h1>
-                <p class="text-lg text-zinc-600 mb-4">你好呀！！</p>
-                <p class="text-lg text-zinc-600 mb-4">一个苦哈哈的学生党</p>
-                <p class="text-lg text-zinc-600 mb-4">会一些编程和网络以及电路知识---（但不多）</p>
-                <p class="text-lg text-zinc-600 mb-4">Reach me at: i@121318.xyz</p>
+        #pagi@121318.xyz</p>
             </div>
         </div>
         <footer class="footer-container">
@@ -80,20 +66,50 @@
 
     <script>
         let currentPage = 1;
+        let startY;
 
-        function scrollHandler(event) {
+        function wheelHandler(event) {
             if (event.deltaY > 0 && currentPage === 1) {
-                document.getElementById('page1').style.transform = 'translateY(-100%)';
-                document.getElementById('page2').style.transform = 'translateY(0)';
-                currentPage = 2;
+                switchToPage2();
             } else if (event.deltaY < 0 && currentPage === 2) {
-                document.getElementById('page1').style.transform = 'translateY(0)';
-                document.getElementById('page2').style.transform = 'translateY(100%)';
-                currentPage = 1;
+                switchToPage1();
             }
         }
 
-        window.addEventListener('wheel', scrollHandler);
+        function touchStartHandler(event) {
+            startY = event.touches[0].clientY;
+        }
+
+        function touchMoveHandler(event) {
+            if (!startY) return;
+
+            let currentY = event.touches[0].clientY;
+            let diffY = startY - currentY;
+
+            if (diffY > 50 && currentPage === 1) {
+                switchToPage2();
+                startY = null;
+            } else if (diffY < -50 && currentPage === 2) {
+                switchToPage1();
+                startY = null;
+            }
+        }
+
+        function switchToPage1() {
+            document.getElementById('page1').style.transform = 'translateY(0)';
+            document.getElementById('page2').style.transform = 'translateY(100%)';
+            currentPage = 1;
+        }
+
+        function switchToPage2() {
+            document.getElementById('page1').style.transform = 'translateY(-100%)';
+            document.getElementById('page2').style.transform = 'translateY(0)';
+            currentPage = 2;
+        }
+
+        window.addEventListener('wheel', wheelHandler);
+        window.addEventListener('touchstart', touchStartHandler);
+        window.addEventListener('touchmove', touchMoveHandler);
     </script>
 </body>
 </html>
